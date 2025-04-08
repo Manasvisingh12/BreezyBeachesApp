@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Beaches</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #167c89;
+            transition: background-image 0.5s ease-in-out;
+            background-image: url('https://images2.alphacoders.com/694/694278.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+
+        .beach-container {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            gap: 15px;
+            width: 90%;
+            justify-content: flex-end;
+            transition: transform 0.5s ease;
+        }
+
+        .beach-box {
+            width: 200px;
+            height: 250px;
+            overflow: hidden;
+            border: 0.15px solid #fff;
+            cursor: pointer;
+            position: relative;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .beach-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .beach-box.hidden {
+            opacity: 0;
+            pointer-events: none;
+            display: none;
+        }
+
+        .beach-box:hover {
+            transform: scale(1.1);
+        }
+
+        .beach-box:hover img {
+            transform: scale(1.1);
+        }
+
+        .beach-box h3 {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 1.2em;
+            background-color: rgba(0, 0, 0, 0.052);
+            padding: 5px 10px;
+            margin: 0;
+            border-radius: 5px;
+        }
+
+        .info-box {
+            position: absolute;
+            top: 250px;
+            left: 20px;
+            background-color: rgba(255, 252, 252, 0);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            width: 600px;
+        }
+
+        .info-box.visible {
+            opacity: 1;
+        }
+
+        /* Style for the beach name */
+        #beach-name {
+            font-size: 70px;
+            color: white;
+            font-family: 'Libre Baskerville', sans-serif;
+            margin-top: 05px;
+        }
+
+        /* Style for the beach location */
+        #beach-location {
+            font-size: 24px;
+            color: #ffffff;
+            margin-top: 10px;
+        }
+
+        /* Style for the beach description */
+        #beach-description {
+            font-size: 18px;
+            color: #ffffff;
+            margin-top: 10px;
+        }
+
+        /* Style for the navigation bar */
+        .navbar {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            /* Space between buttons */
+        }
+
+        .navbar a {
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: rgba(2, 2, 2, 0);
+            color: #ffffff;
+            border-radius: 0px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #0000008e;
+            /* Color change on hover */
+            color: white;
+            transform: scale(1.1);
+            /* Slightly enlarge button on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <!-- Navigation bar with buttons -->
+    <div class="navbar">
+        <a href="interface1.html">Home</a>
+        <a href="search.html">Search</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="explore.html">Explore</a>
+        <a href="contactus.html">Contact Us</a>
+    </div>
+
+    <!-- Container for the small beach images -->
+    <div class="beach-container" id="beachContainer">
+        <!-- Beach 1 -->
+        <div class="beach-box" onclick="showBeach('beach1')">
+            <img src="https://img.veenaworld.com/wp-content/uploads/2022/01/Puri.jpg" alt="Beach 1">
+            <h3>Golden Beach</h3>
+        </div>
+        <!-- Beach 2 -->
+        <div class="beach-box" onclick="showBeach('beach2')">
+            <img src="https://s3.india.com/wp-content/uploads/2024/05/Feature-Image_-Mumbai-1.jpg" alt="Beach 2">
+            <h3>Juhu Beach</h3>
+        </div>
+        <!-- Beach 3 -->
+        <div class="beach-box" onclick="showBeach('beach3')">
+            <img src="https://trot.world/wp-content/uploads/2020/07/DSC_0665-scaled.jpg" alt="Beach 3">
+            <h3>Calangute Beach</h3>
+        </div>
+        <!-- Beach 4 -->
+        <div class="beach-box" onclick="showBeach('beach4')">
+            <img src="https://www.godigit.com/content/dam/godigit/directportal/en/contenthm/ghoghla-beach-daman.jpg"
+                alt="Beach 4">
+            <h3>Jampore Beach</h3>
+        </div>
+        <!-- Beach 5 (Initially hidden) -->
+        <div class="beach-box hidden" onclick="showBeach('beach5')">
+            <img src="https://images8.alphacoders.com/430/thumb-1920-430833.jpg" alt="Beach 5">
+            <h3>Radhanagar Beach</h3>
+        </div>
+    </div>
+
+    <!-- Info box to show beach information -->
+    <div id="info-box" class="info-box">
+
+        <h2 id="beach-name">Beach Name</h2> <!-- Moved the beach name below the location and description -->
+        <h3 id="beach-location">Beach Location</h3>
+        <p id="beach-description">Beach description goes here.</p>
+    </div>
+
+    <script>
+        // Predefined beach data - Editable directly in the HTML structure below
+        const beachData = {
+            beach1: {
+                name: 'Golden Beach',
+                location: 'Puri, Odisha',
+                description: 'This is a scenic and serene beach known for its clear waters and calm surroundings.'
+            },
+            beach2: {
+                name: 'Juhu Beach',
+                location: 'Mumbai, Maharashtra',
+                description: 'A vibrant beach with a bustling atmosphere, perfect for family outings.'
+            },
+            beach3: {
+                name: 'Calangute Beach',
+                location: 'Goa, India',
+                description: 'A quiet and tranquil beach, ideal for relaxation and meditation.'
+            },
+            beach4: {
+                name: 'Jampore Beach',
+                location: 'Daman and Diu, India',
+                description: 'Known for its stunning sunsets and picturesque views.'
+            },
+            beach5: {
+                name: 'Radhanagar Beach',
+                location: 'Andaman Islands, India',
+                description: 'A hidden gem, Paradise Beach offers pristine sands and crystal-clear waters.'
+            }
+        };
+
+        // Function to change the background image and show beach info
+        function showBeach(beach) {
+            const beachInfo = beachData[beach];
+
+            // Change the background image of the body
+            let beaches = {
+                beach1: 'https://img.veenaworld.com/wp-content/uploads/2022/01/Puri.jpg',
+                beach2: 'https://s3.india.com/wp-content/uploads/2024/05/Feature-Image_-Mumbai-1.jpg',
+                beach3: 'https://trot.world/wp-content/uploads/2020/07/DSC_0665-scaled.jpg',
+                beach4: 'https://www.godigit.com/content/dam/godigit/directportal/en/contenthm/ghoghla-beach-daman.jpg',
+                beach5: 'https://images8.alphacoders.com/430/thumb-1920-430833.jpg'
+            };
+            document.body.style.backgroundImage = `url(${beaches[beach]})`;
+
+            // Show the beach info in the info box
+            document.getElementById('beach-name').innerText = beachInfo.name;
+            document.getElementById('beach-location').innerText = 'Location: ' + beachInfo.location;
+            document.getElementById('beach-description').innerText = beachInfo.description;
+
+            // Make the info box visible
+            const infoBox = document.getElementById('info-box');
+            infoBox.classList.add('visible');
+
+            // Slide effect: Move the clicked box to the front
+            rotateBoxes();
+        }
+
+        // Function to rotate the boxes
+        function rotateBoxes() {
+            const beachContainer = document.getElementById('beachContainer');
+            const boxes = Array.from(beachContainer.children);
+
+            // Find the hidden box
+            const hiddenBox = boxes.find(box => box.classList.contains('hidden'));
+
+            // Show the hidden box
+            hiddenBox.classList.remove('hidden');
+
+            // Hide the first visible box after the animation
+            setTimeout(() => {
+                const visibleBox = boxes.find(box => !box.classList.contains('hidden'));
+                visibleBox.classList.add('hidden');
+
+                // Move the visible box to the end of the container
+                beachContainer.appendChild(visibleBox);
+            }, 300);
+        }
+    </script>
+</body>
+
+</html>

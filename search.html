@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background</title>
+    <style>
+        /* Ensure the body takes up full height and removes margins */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        /* Fullscreen background video container */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 112vw;
+            height: 112vh;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        /* Content overlaying the video */
+        .content {
+            position: absolute;
+            top: 27%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 70px;
+        }
+
+        /* Search bar styling */
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Search input with transition effect */
+        .search-input {
+            padding: 12px;
+            width: 400px; /* Initial width */
+            border: none;
+            font-size: 18px;
+            border-radius: 25px; /* Rounded edges */
+            transition: width 0.4s ease-in-out, background-color 0.4s ease-in-out; /* Smooth transition for width and background */
+        }
+
+        /* Search input hover effect: increases width */
+        .search-input:hover, .search-input:focus {
+            width: 500px; /* Expands the search bar on hover or focus */
+            background-color: #f1f1f1; /* Light background color on hover/focus */
+        }
+
+        /* Search button styling */
+        .search-button {
+            padding: 12px 24px;
+            background-color: #8bc7de;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin-left: 10px;
+            border-radius: 25px;
+        }
+
+        .search-button:hover {
+            background-color: #58bacb;
+        }
+
+        /* Container for the boxes */
+        .box-container {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        /* Style for each box */
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.546);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .box:hover {
+            transform: scale(1.1);
+        }
+
+        .box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .box p {
+            font-size: 14px;
+            line-height: 1;
+            color: #ffffff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .box p strong {
+            font-weight: bold;
+            font-size: 16px;
+            color: rgb(255, 255, 255);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Navigation Bar Styling */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: transparent;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            font-weight: 300;
+            font-size: 18px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #58bacb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <div class="navbar">
+        <a href="interface1.html">Home</a>
+        <a href="search.html">Search</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="explore.html">Explore</a>
+        <a href="contactus.html">Contact Us</a>
+    </div>
+
+    <!-- Background Video Container -->
+    <div class="video-container">
+        <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/IxF55qB4CuQ?autoplay=1&mute=1&loop=1&playlist=IxF55qB4CuQ&controls=0&modestbranding=1&rel=0&iv_load_policy=3" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Content on top of the video -->
+    <div class="content">
+        <h1>Breezy Beaches</h1>
+        <p>Discover the beauty of coastal India!</p>
+
+        <!-- Updated Search Bar -->
+        <div class="search-bar">
+            <form action="search.php" method="GET">
+                <input type="text" class="search-input" name="beach_name" placeholder="Search for a beach...">
+                <button class="search-button" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Box section at the bottom -->
+    <div class="box-container">
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="https://travelogyindia.b-cdn.net/storage/app/upload/juhu-beach-mumbai-1.jpg" alt="Beach 1">
+            <p><strong>Juhu Beach, Mumbai</strong><br> Famous for its lively atmosphere and stunning sunsets, this iconic beach offers a perfect blend of relaxation and excitement. Enjoy a leisurely stroll along the golden sands, savor delicious street food from local vendors, and experience the lively energy.</p>
+        </div>
+        <!-- Box 2 -->
+        <div class="box">
+            <img src="https://media.istockphoto.com/id/535168027/photo/india-goa-palolem-beach.jpg?s=612x612&w=0&k=20&c=iGV1Ue0Efj87dQirWnUpZVG1dNobUjfVvMGdKHTJ7Qg=" alt="Beach 2">
+            <p><strong>Palolem Beach, Goa</strong><br> Known for its palm-fringed shores and tranquil waters, this picturesque beach offers a peaceful retreat away from the hustle and bustle. Relax in cozy beachfront huts, indulge in delicious seafood, and enjoy stunning sunsets that paint the sky with vibrant hues.</p>
+        </div>
+        <!-- Box 3 -->
+        <div class="box">
+            <img src="https://www.keralatourism.org/images/destination/large/varkala_beach20131031122407_328_1.jpg" alt="Beach 3">
+            <p><strong>Kovalam Beach, Kerala</strong><br> Escape to the mesmerizing shores of Kovalam Beach, where the beauty of the Arabian Sea meets golden sands. Famous for its crescent-shaped coastline and vibrant atmosphere, this tropical haven is perfect for sunbathing, surfing, or simply relaxing by the calm waters.</p>
+        </div>
+    </div>
+
+</body>
+</html>

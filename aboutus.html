@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            overflow: hidden; /* Hide any overflow */
+        }
+
+        /* Fullscreen background video container */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 112vw;
+            height: 112vh;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+        /* Content overlaying the video */
+        .content {
+            position: absolute;
+            top: 30%; /* Adjust this value to move the content down */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .about-box {
+            background-color: rgba(255, 255, 255, 0.44); /* Semi-transparent white */
+            padding: 20px 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            max-width: 800px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+        }
+
+        .about-box:hover {
+            transform: scale(1.05); /* Slightly enlarge the box */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow depth on hover */
+        }
+
+        h1 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px; /* Space between buttons */
+        }
+
+        .navbar a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0);
+            color: #ffffff;
+            border-radius: 0px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #ffffff6f; /* Color change on hover */
+            color: white;
+            transform: scale(1.1); /* Slightly enlarge button on hover */
+        }
+    </style>
+</head>
+<body>
+     <!-- Navigation bar with buttons -->
+     <div class="navbar">
+        <a href="interface1.html">Home</a>
+        <a href="search.html">Search</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="explore.html">Explore</a>
+        <a href="contactus.html">Contact Us</a>
+    </div>
+
+    <!-- Background Video Container -->
+    <div class="video-container">
+        <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/IxF55qB4CuQ?autoplay=1&mute=1&loop=1&playlist=IxF55qB4CuQ&controls=0&modestbranding=1&rel=0&iv_load_policy=3" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    <div class="about-box">
+        <h1 style="color: aliceblue;">About Us</h1>
+        <p>Welcome to Breezy Beaches, your ultimate guide to discovering the perfect beach destinations across India. Whether you're seeking serene shores, adventure-packed coastlines, or family-friendly spots, we are here to help you find the beach that suits your needs.
+
+            Our team is passionate about India’s diverse coastal beauty, and we’ve designed this platform to bring you the most reliable and up-to-date information on beach suitability across the country. We provide insights on water quality, safety, amenities, accessibility, and more, helping you make informed decisions for your beach getaways.
+            
+            From Goa’s popular stretches to Kerala’s hidden gems and Tamil Nadu’s scenic coasts, our mission is to connect beach lovers with their ideal destinations. Explore our site to discover beaches that match your preferences, whether you’re looking to relax, surf, or experience the rich coastal culture of India.
+            
+            We believe that everyone should have access to safe and enjoyable beach experiences, and we are committed to delivering accurate and relevant information that helps you make the most of your time by the sea.
+            
+            <br>
+            Happy beach exploring!</p>
+    </div>
+</body>
+</html>

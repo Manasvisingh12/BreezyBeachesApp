@@ -1,0 +1,28 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+#background-video {
+    position: fixed; /* Fix it to the viewport */
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Send to back */
+    transform: translate(-50%, -50%); /* Center the video */
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* Bring content above the video */
+    color: white; /* Ensure text is readable */
+    text-align: center;
+    padding: 20px;
+}
+
+

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us Page</title>
+    <style>
+        /* Set the background image for the body */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Aligns the form to the center horizontally */
+            align-items: center;
+            /* Aligns the form to the center vertically */
+            height: 150vh;
+            /* Extended height to allow scrolling */
+            background-image: url('https://www.franklinarts.com/media/artwork-primary/AQUA-Panoramic-Beach-Franklin-Arts.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            position: relative;
+        }
+
+        /* Style for the form container */
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.755);
+            /* Semi-transparent background */
+            padding: 20px;
+            max-width: 650px;
+            /* Increase width */
+            width: 100%;
+            height: auto;
+            /* Automatic height */
+            margin: 30px;
+            /* Add some margin around the form */
+            transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+            /* Smooth transition */
+        }
+
+        /* Hover effect to enlarge form container */
+        .form-container:hover {
+            transform: scale(1.05);
+            /* Slight enlargement */
+        }
+
+        /* Style the form elements */
+        input,
+        textarea {
+            width: 96%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #2a798d;
+            /* Button color */
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            /* Smooth transition for enlargement */
+        }
+
+        /* Hover effect to enlarge the submit button */
+        input[type="submit"]:hover {
+            background-color: #156ea4;
+            /* Change button color */
+            transform: scale(1.2);
+            /* Enlarge the button on hover */
+        }
+
+        /* Style for the small text below the submit button */
+        .terms {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #000000;
+        }
+
+        /* Optional: Style the links in the terms section */
+        .terms a {
+            color: #20517b;
+            text-decoration: none;
+        }
+
+        .terms a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style for the contact details section */
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            color: #20517b;
+            text-align: center;
+        }
+
+        /* Style for individual contact information */
+        .contact-info {
+            margin: 10px 0;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Style for icons */
+        .contact-info i {
+            margin-right: 10px;
+            font-size: 24px;
+            color: #20517b;
+        }
+        .navbar {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px; /* Space between buttons */
+        }
+
+        .navbar a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0);
+            color: #ffffff;
+            border-radius: 0px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #ffffff6f; /* Color change on hover */
+            color: white;
+            transform: scale(1.1); /* Slightly enlarge button on hover */
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+     <!-- Navigation bar with buttons -->
+     <div class="navbar">
+        <a href="interface1.html">Home</a>
+        <a href="search.html">Search</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="explore.html">Explore</a>
+        <a href="contactus.html">Contact Us</a>
+    </div>
+    <!-- Form container -->
+    <div class="form-container">
+        <h2 style="color: #20517b;">Get in Touch</h2>
+        <form>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" placeholder="Your first name..">
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" placeholder="Your last name..">
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" placeholder="Your email..">
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your phone number..">
+
+            <label for="message">How can we help you?</label>
+            <textarea id="message" name="message" placeholder="Your message.." rows="4"></textarea>
+
+            <input type="submit" value="Submit">
+            <p class="terms">By contacting us, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+        </form>
+    </div>
+
+    <!-- Contact details section -->
+    <div class="contact-details">
+        <h2>Contact Us</h2>
+
+        <!-- Email information -->
+        <div class="contact-info">
+            <i class="fas fa-envelope"></i>
+            <span>email@example.com</span>
+        </div>
+
+        <!-- Phone information -->
+        <div class="contact-info">
+            <i class="fas fa-phone"></i>
+            <span>+123 456 7890</span>
+        </div>
+    </div>
+</body>
+
+</html>

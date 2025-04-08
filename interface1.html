@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Heading, Image, and Buttons Example</title>
+    <link rel="stylesheet" href="video.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1b2a;
+            overflow: hidden;
+        }
+
+        /* Fullscreen background video container */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 112vw;
+            height: 112vh;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .centered-heading {
+            text-align: center;
+        }
+
+        /* Navigation Bar Styling */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: transparent;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            font-weight: 300;
+            font-size: 18px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #58bacb;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .button {
+            background-color:white;
+            border: white;
+            color: rgb(0, 0, 0);
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px;
+            cursor: pointer;
+            border-radius: 0px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #5892ab;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Video Container -->
+    <div class="video-container">
+        <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/IxF55qB4CuQ?autoplay=1&mute=1&loop=1&playlist=IxF55qB4CuQ&controls=0&modestbranding=1&rel=0&iv_load_policy=3" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="navbar">
+        <a href="interface1.html">Home</a>
+        <a href="search.html">Search</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="explore.html">Explore</a>
+        <a href="contactus.html">Contact Us</a>
+    </div>
+
+    <!-- Main Heading -->
+    <h1 class="centered-heading"
+        style="font-family: 'Open sans-serif', sans-serif; color:rgb(255, 255, 255); font-size: 78px;">
+        BREEZY BEACHES INDIA
+    </h1>
+
+    <!-- Subheading -->
+    <h3 class="centered-heading"
+        style="font-family: 'Roboto', sans-serif; color: rgb(255, 255, 255); font-size: 23px; font-weight: 300;">
+        Discover Your Perfect Beach Destination!
+    </h3>
+
+    <!-- Sign In and Sign Up Buttons -->
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='signin.html'">Sign In</button>
+        <button class="button" onclick="window.location.href='signup.html'">Sign Up</button>
+    </div>
+
+</body>
+
+</html>
