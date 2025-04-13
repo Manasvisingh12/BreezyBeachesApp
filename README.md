@@ -1,6 +1,6 @@
 # Breezy Beaches
 
-Breezy Beaches is a beach suitability prediction website that helps users determine if a beach is suitable for visiting based on real-time environmental factors. The platform allows users to view predictions based on parameters such as temperature, humidity, pollution levels, and water quality.
+Breezy Beaches is a beach suitability prediction website that helps users determine if a beach is suitable for visiting based on real-time environmental factors. The platform allows users to view predictions based on parameters such as temperature, humidity, pollution levels, and water quality. It ensures users who are travelling to these beaches in india can get real time notification on what exactly is happened there at the location  
 
 ## Features
 
@@ -18,9 +18,9 @@ Breezy Beaches is a beach suitability prediction website that helps users determ
 
 ## How It Works
 
-1. Admin updates environmental parameters for beaches
-2. The system evaluates beach suitability based on predefined rules
-3. Users can check suitability scores and visit recommendations
+1. Admin updates environmental parameters for beaches.
+2. The system evaluates beach suitability based on predefined rules.
+3. Users can check suitability scores and visit recommendations.
 
 ## Database
 
